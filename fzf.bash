@@ -1,4 +1,26 @@
-#! /bin/bash
+#!/bin/bash
+
+if [[ "${OSTYPE}" == "darwin"* ]]; then
+    # Setup fzf
+    # ---------
+    if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+      export PATH="$PATH:/usr/local/opt/fzf/bin"
+    fi
+
+    # Auto-completion
+    # ---------------
+    [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
+elif [[ "${OSTYPE}" == "linux-gnu" ]]; then
+    # Setup fzf
+    # ---------
+    if [[ ! "$PATH" == */home/max/.fzf/bin* ]]; then
+        export PATH="$PATH:/home/max/.fzf/bin"
+    fi
+
+    # Auto-completion
+    # ---------------
+    [[ $- == *i* ]] && source "/home/max/.fzf/shell/completion.bash" 2> /dev/null
+fi
 
 # Key bindings
 # ------------
@@ -181,5 +203,3 @@ fbr() {
   branch=$(echo "$branches" | fzf +m) &&
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
-
-
