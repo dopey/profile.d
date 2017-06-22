@@ -31,7 +31,7 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 # =============================================================================
 
 if [[ "${OSTYPE}" == "darwin"* ]]; then
-    alias grep='grep --color=auto -r'
+    alias grep='ggrep'
     alias hangoutsrage='sudo killall AppleCameraAssistant'
     alias vg='vagrant'
 elif [[ "${OSTYPE}" == "linux-gnu" ]]; then
@@ -50,7 +50,7 @@ alias +='pushd'
 alias -- -='popd'
 
 # ip
-alias myip="ifconfig | grep inet  | grep -v 127.0.0.1 | cut -d\ -f2"
+alias myip="ifconfig | grep '^\s*inet ' | grep -v 127.0.0.1 | cut -d' ' -f2"
 
 # =============================================================================
 # Bash History
@@ -91,4 +91,3 @@ function psg {
 function psm {
     ps -eo size,pid,user,command | awk '{ hr=$1/1024 ; printf("%13.6f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' | sort
 }
-
