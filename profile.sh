@@ -81,6 +81,8 @@ if [[ "${OSTYPE}" == "darwin"* ]]; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
+elif [[ "${OSTYPE}" == "linux-gnu" ]]; then
+    PATH="${PATH}:${HOME}/.local/bin"
 fi
 
 # ps aux w/ grep
