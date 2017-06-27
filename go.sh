@@ -1,7 +1,8 @@
 #! /bin/bash
 
-export GOPATH="$HOME"
+export GOPATH="${HOME}"
 
 if [[ "${OSTYPE}" == "linux-gnu" ]]; then
-    PATH="$PATH:/usr/local/go/bin"
+    # go
+    PATH="${PATH}:/usr/local/go/bin:${GOPATH}/bin"
 fi

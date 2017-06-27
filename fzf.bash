@@ -3,8 +3,8 @@
 if [[ "${OSTYPE}" == "darwin"* ]]; then
     # Setup fzf
     # ---------
-    if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-      export PATH="$PATH:/usr/local/opt/fzf/bin"
+    if [[ ! "${PATH}" == */usr/local/opt/fzf/bin* ]]; then
+        PATH="${PATH}:/usr/local/opt/fzf/bin"
     fi
 
     # Auto-completion
@@ -13,8 +13,8 @@ if [[ "${OSTYPE}" == "darwin"* ]]; then
 elif [[ "${OSTYPE}" == "linux-gnu" ]]; then
     # Setup fzf
     # ---------
-    if [[ ! "$PATH" == */home/max/.fzf/bin* ]]; then
-        export PATH="$PATH:/home/max/.fzf/bin"
+    if [[ ! "${PATH}" == */home/max/.fzf/bin* ]]; then
+        PATH="${PATH}:/home/max/.fzf/bin"
     fi
 
     # Auto-completion
