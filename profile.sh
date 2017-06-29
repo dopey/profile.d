@@ -69,20 +69,12 @@ export EDITOR=vim
 export VISUAL=vim
 
 if [[ "${OSTYPE}" == "darwin"* ]]; then
-    PATH="$PATH:~/.bin"
-    PATH=/Users/max/bin:${PATH}
-    PATH=/usr/local/bin:${PATH}
-    PATH=/usr/local/sbin:${PATH}
-    PATH=/usr/local/lib/node_modules:${PATH}
-
     PG=/Users/max/src/playground
     GOSRC=/usr/local/Cellar/go/1.1
 
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
-elif [[ "${OSTYPE}" == "linux-gnu" ]]; then
-    PATH="${PATH}:${HOME}/.local/bin"
 fi
 
 # ps aux w/ grep
